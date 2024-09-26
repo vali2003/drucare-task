@@ -1,0 +1,120 @@
+<div class="container-fluid">
+    <div class="row">
+                <ng-container  *ngFor="let a of data" >
+                        <div class="card">
+
+                                                    <!-- TRUE -->
+                            <ng-container *ngIf="enbl">
+                            <div class="card-header" style="background-color: rgba(0, 0, 0, 0.258);">
+                                <h4>Name: {{a.name}} &nbsp;</h4>
+                                <h4>City: {{a.city}} &nbsp;</h4>
+                                <h4>Age: {{a.age}} &nbsp;</h4>
+                                <span style="position: absolute; right: 20px;">
+                                    <button (click)="edit1(a)">Edit</button>
+                                    <p style="display: inline;">&nbsp;</p>
+                                    <button (click)="delete(a)">Delete</button>
+                                </span>
+                            </div>
+                        </ng-container>
+
+                                                    <!-- FALSE -->
+                        <ng-container *ngIf="!enbl">
+                            <div class="card-header" style="background-color: rgba(0, 0, 0, 0.258);">
+                                <h4><input type="text" [(ngModel)]="a.name"></h4>
+                                <h4><input type="text" [(ngModel)]="a.city"></h4>
+                                <h4><input type="text" [(ngModel)]="a.age"></h4>
+                                <span style="position: absolute; right: 20px;">
+                                    <button (click)="save1(a)">Save</button>
+                                    <p style="display: inline;">&nbsp;</p>
+                                    <button (click)="delete(a)">Delete</button>
+                                </span>
+                            </div>
+                        </ng-container>
+                            <!-- <div class="" *ngIf="!"> -->
+<br>
+            <h4 style="color: red;">Friends :</h4>
+
+                                                        <!-- TRUE -->
+
+<ng-container *ngFor="let b of a.friends">
+    <ng-container *ngIf="enbl2">
+                            <div class="card-body lines col-md-3 " style="display: inline; background-color: rgba(0, 0, 0, 0.166);" >
+                                <div class="hello" >
+                                <h4 class="card-title" style="color: blue;">{{b.name}}</h4>
+                                <span style="position: absolute; left:270px">
+                                    <button (click)="edit2(b)">Edit</button>
+                                    <p style="display: inline;">&nbsp;</p>
+                                    <button (click)="delete(b)">Delete</button>
+                                </span>
+                                <br>
+                                <br>
+                                <h5 style="color: green;">Hobbies :</h5>
+                                
+                                <div class="" *ngFor="let c of b.hobbies">
+                                   
+                                <h6 class="card-title">{{c}}</h6>
+                            </div>
+                            </div>
+                            </div><br>
+                        </ng-container>
+
+
+                                                        <!-- FALSE -->
+
+                    <ng-container *ngIf="!enbl2">
+                            <div class="card-body lines col-md-3 " style="display: inline; background-color: rgba(0, 0, 0, 0.166);" >
+                                <div class="hello" >
+                                <h4 class="card-title" style="color: blue;"><input type="text" [(ngModel)]="b.name"></h4>
+                                <span style="position: absolute; left:270px">
+                                    <button (click)="save2(b)">Save</button>
+                                    <p style="display: inline;">&nbsp;</p>
+                                    <button (click)="delete(b)">Delete</button>
+                                </span>
+                                <br>
+                                <br>
+                                <h5 style="color: green;">Hobbies :</h5>
+                                
+                                <div class="" *ngFor="let c of b.hobbies">
+                                   
+                                <h6 class="card-title"><input type="text" placeholder="{{c}}" [(ngModel)]="c.hobbies"></h6>
+                            </div>
+                            </div>
+                            </div><br>
+                        </ng-container>
+                        </ng-container>
+
+                            <!-- <div class="">
+                                <h6>{{}}</h6>
+                                <h6>{{}}</h6>
+                                <h6>{{}}</h6>
+                                <button class="btn btn-warning" (click)="edit(p)">Edit</button>
+                                <button class="btn btn-danger" (click)="delete(p)">Delete</button>
+                            </div> -->
+                        
+
+
+
+
+
+                        <!-- <div class="" *ngIf="p.productEdit">
+
+                            <div class="card-body">
+                                <h4 class="card-title"><input type="text" [(ngModel)]=""></h4>
+                            </div>
+                            <div class="card-footer">
+                                
+                                <h6 class="card-title"><input type="text" [(ngModel)]=""></h6>
+                                <h6 class="card-title"><input type="text" [(ngModel)]=""></h6>
+                                <h6 class="card-title"><input type="text" [(ngModel)]=""></h6>
+        
+                                <button class="btn btn-success" (click)="save(p)">Save</button>
+                                <button class="btn btn-danger" (click)="delete(p)">Delete</button>
+                            </div>
+                        </div> -->
+                        <br>
+                        <br>
+                        </div>
+                    
+                </ng-container>
+    </div>
+</div>
